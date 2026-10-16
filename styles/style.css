@@ -1,6 +1,6 @@
 .header{
     display: grid;
-    grid-template-columns: 1fr auto 1fr; 
+    grid-template-columns: 1fr min-content 1fr; 
     align-items: center;
     padding: 20px 40px;
     height: 293px;
@@ -29,7 +29,7 @@
     line-height: 24.3px;
 }
 
-.p-underline{
+.underlined{
     text-decoration: underline;
     text-underline-offset: 5px;
     text-decoration-thickness: 1px;
