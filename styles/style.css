@@ -2,22 +2,41 @@
     display: grid;
     grid-template-columns: 1fr min-content 1fr; 
     align-items: center;
-    padding: 20px 40px;
+    padding: 25px 50px 35px;
     height: 293px;
 }
 
-.icon-logo-header{
-    width: 129.11196899414062px;
-    height: 104.6517562866211px;
+.icon-logo-header {
+    width: 135px;
+    height: auto;
     display: block;
 }
 
 .nav-header {
     justify-self: start; 
     display: flex;
-    gap: 15px;
     line-height: 100%;
     flex-wrap: nowrap;
+}
+
+.nav-list {
+    display: flex;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.nav-list li + li {
+    list-style: circle;
+}
+
+.nav-list li {
+    list-style: none;
+}
+
+.nav-list .with-circle {
+    list-style: circle inside;
 }
 
 .address-header{
@@ -29,15 +48,16 @@
     line-height: 24.3px;
 }
 
-.underlined{
+a {
+    color: inherit;
     text-decoration: underline;
     text-underline-offset: 5px;
     text-decoration-thickness: 1px;
+    text-decoration-skip-ink: none;
 }
 
-.dot {
-    color: #000000;
-    width: 6px;
+.no-underline {
+    text-decoration: none;
 }
 
 .cover {
@@ -45,7 +65,7 @@
     margin: 0 auto;
     max-width: 1100px;
     height: 757px;
-    background-color: rgba(0, 0, 0, 0.6); /* 60% затемнения из Фигмы */
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .img-cover {
@@ -60,57 +80,32 @@
 
 .titles-container {
     position: absolute;
-    top: 165px;         
-    left: 50px;         
-    right: 50px;        
-    height: 385px;      
+    top: 175px;
+    left: 50px;
+    right: 50px;
     display: grid;
-    
-    /* ИСПРАВЛЕНО: Вернули 3 фиксированные колонки */
-    grid-template-columns: repeat(3, 333px); 
-    
-    grid-template-rows: repeat(3, 1fr);
-    justify-content: center; 
+    grid-template-columns: 332px 285px 1fr;
+    row-gap: 37px;
 }
 
 .h1-cover {
-    font-size: 100px;      
-    
-    /* ИСПРАВЛЕНО: Заменили проценты % на em (30% — это 0.3em) */
-    letter-spacing: 0.3em; 
-    
+    font-size: 100px;
+    line-height: 1;
+    letter-spacing: 0.3em;
     color: #FFFFFF;
     margin: 0;
-    font-family: 'Raleway', sans-serif;
     font-weight: 700;
+    white-space: nowrap;
 }
 
-.h1-cover:nth-of-type(1) { 
-    grid-column: 1; 
-    grid-row: 1; 
-    justify-self: center;
-    align-self: center; 
-}
-
-.h1-cover:nth-of-type(2) { 
-    grid-column: 2; 
-    grid-row: 2; 
-    justify-self: center;
-    align-self: center; 
-}
-
-.h1-cover:nth-of-type(3) { 
-    grid-column: 3; 
-    grid-row: 3; 
-    justify-self: center;
-    align-self: center; 
-}
-
+.h1-cover:nth-of-type(1) { grid-column: 1; grid-row: 1; }
+.h1-cover:nth-of-type(2) { grid-column: 2; grid-row: 2; }
+.h1-cover:nth-of-type(3) { grid-column: 3; grid-row: 3; }
 
 .description {
     position: absolute;
-    bottom: 60px;       /* Рассчитанный точный отступ снизу из макета */
-    left: 50px;         /* ТОЧНО ИЗ МАКЕТА (Left: 50px) */
+    bottom: 45px;
+    left: 50px;
     height: 51px;
     width: 1000px;
     display: flex;
@@ -118,16 +113,15 @@
     align-items: center;
 }
 
-/* Текст «Аукцион вещей...» */
 .description p {
     width: 637px;
     height: 28px;
-    color: #FFFFFF; /* Белый благородный цвет с легкой прозрачностью */
+    color: #FFFFFF;
     text-transform: uppercase;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
-    font-size: 22px;             /* ТОЧНО ИЗ МАКЕТА (Size: 22px) */
-    line-height: 28px;           /* ТОЧНО ИЗ МАКЕТА (Line height: 28px) */
+    font-size: 22px;
+    line-height: 28px;
     letter-spacing: 0;
     word-spacing: 15px;
     margin: 0;
@@ -139,19 +133,92 @@
     color: #FFFFFF;
     width: 256px;
     height: 51px;
-    padding: 10px 24px;          /* Внутренние отступы, чтобы рамка села как в Фигме */
+    padding: 10px 24px;
     text-transform: uppercase;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
-    font-size: 22px;             /* ТОЧНО ИЗ МАКЕТА (Size: 22px) */
-    line-height: 100px;          /* В Фигме line-height: 100%, для кнопок в CSS пишем просто 1 */
+    font-size: 22px;
+    line-height: 100px;
     line-height: 1; 
-    letter-spacing: normal;      /* ТОЧНО ИЗ МАКЕТА (Letter spacing: 0%) */
+    letter-spacing: normal;
     cursor: pointer;
 }
 
-.lots{
+.lots {
+    padding-top: 140px; 
+    width: 1052px;
+    height: 723px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
 
+.h2-lots{
+    font-size: 40px;
+}
+
+.lots-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 334px);
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.lots-cards li {
+    width: 334px;
+    height: 596px;
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.lots-cards li:nth-child(1) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/card-lot-01.jpg');
+}
+
+.lots-cards li:nth-child(2) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/card-lot-02.jpg');
+}
+
+.lots-cards li:nth-child(3) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/card-lot-03.jpg');
+}
+
+.lots-cards li a {
+    color: #FFFFFF;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 120%;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.lots-cards article {
+    color: #FFFFFF;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+}
+
+.lots a {
+    align-self: flex-start;
+    color: #000000;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    text-decoration: underline;
+    text-underline-offset: 6px;
 }
 
 .about{
