@@ -1,4 +1,5 @@
-a {
+a,
+.card__title {
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-decoration-skip-ink: none;
@@ -17,19 +18,12 @@ a {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-.cover__title,
-.cover__description,
-.card__title,
-.card__text {
-    position: relative;
-}
-
 .address {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     font-style: normal;
-    line-height: 24.3px;
+    line-height: 135%;
 }
 
 .header {
@@ -78,7 +72,7 @@ a {
     flex-direction: column;
     justify-content: space-between;
     min-height: 757px;
-    padding: 175px 50px 45px;
+    padding: 175px 50px 50px;
     background-image: url('../images/cover.jpg');
     background-repeat: no-repeat;
     background-position: center;
@@ -87,6 +81,7 @@ a {
 }
 
 .cover__title {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 37px;
@@ -101,27 +96,28 @@ a {
 }
 
 .aligned-text_center {
-    text-align: center;
     position: relative;
     left: 15px;
+    text-align: center;
 }
 
 .aligned-text_right {
-    text-align: right;
     margin-top: -10px;
+    text-align: right;
 }
+
 .no-letter-spacing {
     letter-spacing: 0;
 }
 
 .cover__description {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 22px;
-    line-height: 28px;
+    line-height: 130%;
     text-transform: uppercase;
-    margin-bottom: 5px;
 }
 
 .cover__description-text {
@@ -129,8 +125,7 @@ a {
 }
 
 .bet-button {
-    width: 256px;
-    height: 51px;
+    min-width: 256px;
     padding: 10px 24px;
     background: transparent;
     border: 1.5px solid currentColor;
@@ -142,7 +137,7 @@ a {
 .lots {
     display: flex;
     flex-direction: column;
-    width: 1052px;
+    max-width: 1052px;
     margin: 180px auto 0;
 }
 
@@ -195,17 +190,16 @@ a {
 }
 
 .card__title {
+    position: relative;
     padding-top: 5px;
     font-size: 22px;
     line-height: 120%;
     text-transform: uppercase;
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-decoration-skip-ink: none;
     text-underline-offset: 3px;
 }
 
 .card__text {
+    position: relative;
     padding-bottom: 10px;
     line-height: 120%;
 }
@@ -220,7 +214,7 @@ a {
     display: grid;
     grid-template-columns: 334px 1fr;
     column-gap: 25px;
-    width: 1052px;
+    max-width: 1052px;
     margin: 120px auto 0;
 }
 
@@ -240,19 +234,19 @@ a {
 }
 
 .about__title {
+    padding-top: 5px;
     margin: 133px 0 95px;
     font-size: 40px;
     text-transform: uppercase;
-    padding-top: 5px;
 }
 
 .about__text {
     display: flex;
     flex-direction: column;
     gap: 25px;
-    line-height: 24px;
-    padding-top: 5px;
     max-width: 690px;
+    padding-top: 5px;
+    line-height: 120%;
 }
 
 .footer {
